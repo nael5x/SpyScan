@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <Button
+            android:id="@+id/btnLast3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SON 3 UYGULAMA"
+            android:backgroundTint="#DDDDDD"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/inputSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Uygulama adını gir"
+            android:layout_marginTop="12dp"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/btnShowToday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BUGÜNKÜ KULLANIMI GÖSTER"
+            android:backgroundTint="#DDDDDD"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <!-- 📌 Yeni buton buraya -->
+        <Button
+            android:id="@+id/btnRiskScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="İZİN RİSK SKORU"
+            android:backgroundTint="#DDDDDD"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnAccOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ERİŞİLEBİLİRLİK VE EKRAN ÜSTÜ KATMAN TARAMA"
+            android:backgroundTint="#DDDDDD"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnSideloadScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KAYNAK DIŞI UYGULAMA TARAMASI"
+            android:backgroundTint="#DDDDDD"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnRootDebug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ROOT / USB DEBUG TESPİTİ"
+            android:backgroundTint="#DDDDDD"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>
