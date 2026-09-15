@@ -30,13 +30,13 @@ These are awareness indicators, not proof that an app is malicious. Requested pe
 1. Clone the repository and open its root in Android Studio.
 2. Configure JDK 17 and Android SDK Platform 34.
 3. Set the local SDK path through Android Studio or `ANDROID_HOME`.
-4. Sync Gradle dependencies. After resolving the source blockers below, build:
+4. Sync Gradle dependencies.
 
-```bash
-./gradlew assembleDebug
-```
+Build on macOS/Linux with: `./gradlew assembleDebug`
 
-On Windows use `gradlew.bat assembleDebug`. Expected APK location: `app/build/outputs/apk/debug/app-debug.apk`.
+Build on Windows with: `gradlew.bat assembleDebug`
+
+Expected APK location: `app/build/outputs/apk/debug/app-debug.apk`
 
 The app opens Android's Usage Access settings when access is missing. Android version, vendor restrictions, package visibility, and special permissions affect the data available.
 
@@ -44,16 +44,25 @@ The app opens Android's Usage Access settings when access is missing. Android ve
 
 - `app/src/main/java/com/example/spyscan/MainActivity.kt`: usage aggregation, charts, and awareness checks.
 - `app/src/main/res/`: XML layouts, strings, and themes.
-- `app/src/main/AndroidManifest.xml`: activity and package-visibility configuration.
+- `app/src/main/AndroidManifest.xml`: activity, usage-access permission, and package-visibility configuration.
 - `app/src/test/` and `app/src/androidTest/`: example test scaffolding.
 
 ## Status and verification
 
-Developed as a final-year software engineering project; the current checkout is **not a verified buildable release**. A fresh `assembleDebug` attempt fails at `:app:compileDebugKotlin`. In particular, the source declares `class 22222222MainActivity()`, while the manifest expects `MainActivity`.
+Developed as a final-year software engineering project.
 
-The manifest also lacks `android.permission.PACKAGE_USAGE_STATS`, so usage-access setup needs review before device testing. Example tests do not cover the awareness logic, and the build file does not declare their JUnit/test-runner dependencies.
+The previously identified `MainActivity` class-name mismatch and missing `PACKAGE_USAGE_STATS` manifest declaration have been corrected.
 
-After source and test setup repairs, run `./gradlew testDebugUnitTest` and verify the reports on real devices. No detection accuracy, passing suite, or release-readiness claim is made here.
+Before treating the repository as a verified release, run:
+
+- macOS/Linux: `./gradlew assembleDebug`
+- macOS/Linux tests: `./gradlew testDebugUnitTest`
+- Windows: `gradlew.bat assembleDebug`
+- Windows tests: `gradlew.bat testDebugUnitTest`
+
+The example tests currently provide limited coverage and do not fully validate the security-awareness logic. Device-level behavior should also be verified on real Android devices because Android version, vendor restrictions, package visibility, and special-permission behavior can affect results.
+
+No malware-detection accuracy or production release-readiness claim is made.
 
 ## Author
 
