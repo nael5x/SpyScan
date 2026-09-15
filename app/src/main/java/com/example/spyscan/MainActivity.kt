@@ -35,8 +35,7 @@ import kotlin.collections.HashMap
 
 
 
-class 22222222MainActivity() : AppCompatActivity() {
-
+class MainActivity : AppCompatActivity() {
     private lateinit var btnLast3: Button
     private lateinit var btnShowToday: Button
     private lateinit var inputSearch: EditText
