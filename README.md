@@ -51,18 +51,16 @@ The app opens Android's Usage Access settings when access is missing. Android ve
 
 Developed as a final-year software engineering project.
 
-The previously identified `MainActivity` class-name mismatch and missing `PACKAGE_USAGE_STATS` manifest declaration have been corrected.
+The previously identified `MainActivity` class-name mismatch, missing `PACKAGE_USAGE_STATS` declaration, and test-source configuration issues have been corrected.
 
-Before treating the repository as a verified release, run:
+Local verification on Windows completed successfully:
 
-- macOS/Linux: `./gradlew assembleDebug`
-- macOS/Linux tests: `./gradlew testDebugUnitTest`
-- Windows: `gradlew.bat assembleDebug`
-- Windows tests: `gradlew.bat testDebugUnitTest`
+- `gradlew.bat assembleDebug --no-daemon` — BUILD SUCCESSFUL
+- `gradlew.bat testDebugUnitTest --no-daemon` — BUILD SUCCESSFUL
 
-The example tests currently provide limited coverage and do not fully validate the security-awareness logic. Device-level behavior should also be verified on real Android devices because Android version, vendor restrictions, package visibility, and special-permission behavior can affect results.
+The current unit tests provide limited scaffold coverage and do not fully validate the security-awareness logic. Device-level behavior should still be verified on real Android devices because Android version, vendor restrictions, package visibility, and special-permission behavior can affect results.
 
-No malware-detection accuracy or production release-readiness claim is made.
+SpyScan is a security-awareness project, not an antivirus or malware-removal product. No malware-detection accuracy or production release-readiness claim is made.
 
 ## Author
 
